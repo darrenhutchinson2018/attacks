@@ -2,11 +2,17 @@
 
 # Nmap Attack
 # Red Team Wardriving banner in ASCII
-echo "RED TEAM WARDRIVING"
 echo ""
+echo "██╗    ██╗ █████╗ ██████╗ ██████╗ ██████╗ ██╗██╗   ██╗██╗███╗   ██╗ ██████╗ "
+echo "██║    ██║██╔══██╗██╔══██╗██╔══██╗██╔══██╗██║██║   ██║██║████╗  ██║██╔════╝ "
+echo "██║ █╗ ██║███████║██████╔╝██║  ██║██████╔╝██║██║   ██║██║██╔██╗ ██║██║  ███╗"
+echo "██║███╗██║██╔══██║██╔══██╗██║  ██║██╔══██╗██║╚██╗ ██╔╝██║██║╚██╗██║██║   ██║"
+echo "╚███╔███╔╝██║  ██║██║  ██║██████╔╝██║  ██║██║ ╚████╔╝ ██║██║ ╚████║╚██████╔╝"
+echo " ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ "
 echo ""
 
-sleep 5
+
+sleep 3
 
 # Results folder location
 r='/home/pi/attacks/results/'
@@ -22,21 +28,21 @@ echo ""
 sleep 3
 
 # Start Nmap scan of IPs
-echo "Starting Nmap - Fast Scan (Saved as fastNmap.txt in ./results)"
+echo "Starting Nmap - Fast Scan "
 nmap -F $newip.* > $r+fastNmap.txt
 echo "Finsihed Fast Scan"
 echo ""
 sleep 3
 
 # Start Firewall detection scan
-echo "Starting Nmap - Firewall Detection (Saved as fwNmap.txt in ./results)"
+echo "Starting Nmap - Firewall Detection "
 nmap -sA $newip.* > $r+fwNmap.txt
 echo "Finished Firewall Detection"
 echo ""
 sleep 3
 
 # Start Service Version Scan
-echo "Starting Nmap - Ports (Saved as portNmap.txt in ./results)"
+echo "Starting Nmap - Ports "
 nmap -sV $newip.* > $r+portNmap.txt
 echo "Finished Port Scan"
 echo ""
